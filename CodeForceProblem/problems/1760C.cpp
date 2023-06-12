@@ -1,0 +1,56 @@
+#include <bits/stdc++.h>
+using namespace std;
+#define ll long long
+#define F first 
+#define S second
+#define PB push_back
+#define EB emplace_back
+#define rep(i , j , n) for(ll i = j ; i <= n ; i++)
+#define per(i , j , n) for(ll i = j ; i >= n ; i--) 
+typedef pair<int, int> pii;
+typedef pair<ll, ll> pll;
+typedef vector<int> vi;
+typedef vector<ll> vl;
+
+void solve(int n, vector<int> arr){
+
+    vector<int> b = arr;
+    sort(b.begin(), b.end());
+
+    int max = b[n-1];
+    int secMax = b[n-2];
+
+    for(int i = 0; i < n; i++){
+        if(arr[i] == max){
+            cout << (arr[i] - secMax) << " ";
+        }else{
+            cout << (arr[i] - max) << " ";
+        }
+    }
+    cout << "\n";
+}
+
+int main() {
+    ios_base::sync_with_stdio(false);
+    cin.tie(nullptr);
+    // cout << fixed << setprecision(9);
+
+
+    int t;
+    cin >> t;
+
+    while(t-- > 0){
+        int n;
+        cin >> n;
+        vector<int> arr;
+        for(int i = 0; i < n; i++){
+            int x;
+            cin >> x;
+            arr.push_back(x);
+        }
+        solve(n, arr);
+    }
+
+
+    return 0;
+}

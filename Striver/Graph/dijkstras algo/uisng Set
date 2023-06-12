@@ -1,0 +1,40 @@
+vector <int> dijkstra(int V, vector<vector<int>> adj[], int S)
+    {
+        // **** DIJKSTRA ALGO - using SET **** //
+        
+        // SET
+        // {dist, node}   
+        set<pair<int, int>> set;
+        set.insert({0, S});
+        
+        // distance array
+        vector<int> distance(V, INT_MAX);
+        distance[S] = 0;
+        
+        while(!set.empty()){
+            auto it = *(set.begin());
+            int node = it.second;
+            int dis = it.first;
+            set.erase(it);
+            
+            // look for adjacent nodes
+            for(auto it : adj[node]){
+                int adjNode = it[0];
+                int edgeWeigt = it[1];
+                
+                if(dis + edgeWeigt < distance[adjNode]){
+                    // erase if it already existed in set, that is once visited
+                    if(distance[adjNode] != INT_MAX){
+                        set.erase({distance[adjNode], adjNode});
+                    }
+                    
+                    distance[adjNode] = dis + edgeWeigt;
+                    
+                    // push into set, with shorter distance
+                    set.insert({distance[adjNode], adjNode});
+                }
+            }
+        }
+        
+        return distance;
+    }

@@ -1,0 +1,13 @@
+# ninja log v5
+0	1495	6819961941941452	CMakeFiles/1_memoization.dir/main.cpp.obj	4a09128d4904068
+1499	1623	6819961943190479	1_memoization.exe	e56cef2d276a4fbb
+5	1055	6819962005680227	CMakeFiles/1_memoization.dir/main.cpp.obj	4a09128d4904068
+1055	1155	6819962006651668	1_memoization.exe	e56cef2d276a4fbb
+3	1016	6819962747158034	CMakeFiles/1_memoization.dir/main.cpp.obj	4a09128d4904068
+1016	1118	6819962748159621	1_memoization.exe	e56cef2d276a4fbb
+3	1146	6819963083697183	CMakeFiles/1_memoization.dir/main.cpp.obj	4a09128d4904068
+1147	1244	6819963084649512	1_memoization.exe	e56cef2d276a4fbb
+3	999	6819963511997885	CMakeFiles/1_memoization.dir/main.cpp.obj	4a09128d4904068
+1000	1097	6819963512945369	1_memoization.exe	e56cef2d276a4fbb
+3	1006	6819964815421850	CMakeFiles/1_memoization.dir/main.cpp.obj	4a09128d4904068
+1006	1108	6819964816442248	1_memoization.exe	e56cef2d276a4fbb
