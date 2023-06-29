@@ -19,8 +19,7 @@ public:
         if(node == parent[node]){
             return node;
         }
-        parent[node] = findUltParent(parent[node]);
-        return parent[node];
+        return parent[node] = findUltParent(parent[node]);
     }
 
     void unionBySize(int u, int v){

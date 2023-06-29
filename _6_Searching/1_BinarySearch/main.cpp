@@ -19,9 +19,6 @@ int BS(const int A[], int n, int key){
 }
 
 int main() {
-//    int a[] = {2,4,7,14,16,19,26};
-//    int n = 6;
-//    int k = 19;
     int a[] = {10,20,30,40,50,60};
     int n = 6;
     int k = 40;

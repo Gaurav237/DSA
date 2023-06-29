@@ -24,62 +24,24 @@ int main() {
         int n;
         cin >> n;
 
-        vi a;
+        vi a(n);
+        ll sum = 0;
         for(int i = 0; i < n; i++){
-            int x;
-            cin >> x;
-            a.push_back(x);
+            cin >> a[i];
+            sum += a[i];
         }
-
-        int _min = 0;
-        int _max = 0;
-        for(int i = 0; i < n; i++){
-            if(a[i] < a[_min]){
-                _min = i;
-            }
-            if(a[i] > a[_max]){
-                _max = i;
-            }
-        }
-
-        cout << _min << " " << _max << endl;
-
-        int l = 0;
-        int r = n - 1;
 
         int count = 0;
-        bool flag_min = false;
-        bool flag_max = false;
-
-        while(l < r && (!flag_min || !flag_max)){
-
-            if(l == _min || r == _min){
-                flag_min = true;
+        int flag = false;
+        for(int i = 0; i < n; i++){
+            if(a[i] < 0) flag = true;
+            if(flag == true && (a[i] > 0 || i == n-1)){
+                count++;
+                flag = false;
             }
-            if(l == _max || r == _max){
-                flag_max = true;
-            }
-
-            if(!flag_min && (abs(_min - l) < abs(_min - r))){
-                l++;
-                cout << "cond 1" << endl;
-            }else if(!flag_max && (abs(_max - l) < abs(_max - r))){
-                l++;
-                cout << "cond 2" << endl;
-            }else if(!flag_min && (abs(_min - l) >= abs(_min - r))){
-                r--;
-                cout << "cond 3" << endl;
-            }else if(!flag_max && (abs(_max - l) >= abs(_max - r))){
-                r--;
-                cout << "cond 4" << endl;
-            }else{
-                l++;
-            }
-
-            count++;
         }
 
-        cout << count << endl;
+        cout << sum << " " << count << endl;
     }
 
 

@@ -24,7 +24,8 @@ bool isAnagram(const string &a, const string &b){
     }
     const int CHAR = 256;
     int count[CHAR] = {0};
-    for (int i = 0; i < CHAR; ++i) {
+    
+    for (int i = 0; i < a.length(); ++i) {
         count[a[i]]++;
         count[b[i]]--;
     }

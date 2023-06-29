@@ -19,8 +19,7 @@ public:
         if(node == parent[node]){
             return node;
         }
-        parent[node] = findUltParent(parent[node]);
-        return parent[node];
+        return parent[node] = findUltParent(parent[node]);
     }
 
     void unionByRank(int u, int v){
@@ -32,6 +31,7 @@ public:
             return;
         }
 
+        // smaller rank gets attached to big rank, no change in rank
         if(rank[ulp_u] > rank[ulp_v]){
             parent[ulp_v] = ulp_u;
         }else if(rank[ulp_u] < rank[ulp_v]){

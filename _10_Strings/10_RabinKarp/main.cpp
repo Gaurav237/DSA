@@ -20,7 +20,7 @@ void RBSearch(string Txt,string Pat){
     int p = 0, t = 0;
     for(int i = 0; i < M; i++){
         p = (p*d + Pat[i]) % q;
-        q = (t*d + Txt[i]) % q;
+        t = (t*d + Txt[i]) % q;
     }
     // ...
 
@@ -43,7 +43,7 @@ void RBSearch(string Txt,string Pat){
         // Compute t{i+1} using t{i}
         if(i < (N-M)){
             t = ( (d * (t - (Txt[i] * h))) + Txt[i + M] ) % q;
-            if(t < 0){
+            if(t < 0){ // if t value becomes negative, make it positive for comparison
                 t = t + q;
             }
         }

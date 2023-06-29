@@ -24,35 +24,13 @@ int main() {
     cin.tie(nullptr);
     // cout << fixed << setprecision(9);
 
+    vector<vector<int>> edges = {{1,2},{1,0},{0,2}};
 
-    int t;
-    cin >> t;
-
-    while(t-- > 0){
-        int n;
-        cin >> n;
-
-        string st;
-        cin >> st;
-
-        transform(st.begin(), st.end(), st.begin(), ::tolower);
-        
-        bool flag = true;
-        for(int i = 0; i < n-1; i++){
-            if(st[0] != 'm'){
-                flag = false;
-                break;
-            }
-            if(st[i] != 'm' || st[i] != 'e' || st[i] == 'o' || st[i] == 'w'){
-                flag = false;
-                break;
-            }
-
-            if(st[i] == 'm' && (st[i+1] != 'm' && st[i+1] != 'e'))
-        }
-
+    sort(edges.begin(), edges.end());
+    
+    for(int i = 0; i < 3; i++){
+        cout << edges[i][0] << " " << edges[i][1] << endl;
     }
-
 
     return 0;
 }
